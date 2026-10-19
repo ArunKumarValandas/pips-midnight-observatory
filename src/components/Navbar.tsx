@@ -68,18 +68,34 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
         </div>
 
-        {/* Mobile menu toggle */}
-        <button
-          type="button"
-          className="mobile-menu-btn"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-expanded={mobileMenuOpen}
-          aria-label="Toggle navigation menu"
-        >
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-        </button>
+        {/* Header Controls: Persistent Ambient Music & Mobile Menu Toggle */}
+        <div className="nav-header-controls">
+          {/* Ambient Music Control: Symbol-Only 🎵 */}
+          <button
+            type="button"
+            className={`nav-music-btn ${isAmbientPlaying ? 'music-playing' : ''}`}
+            onClick={toggleAmbientMusic}
+            aria-label={isAmbientPlaying ? 'Pause ambient music' : 'Resume ambient music'}
+            title={isAmbientPlaying ? 'Pause ambient music' : 'Resume ambient music'}
+          >
+            <span className="nav-music-icon" aria-hidden="true">
+              🎵
+            </span>
+          </button>
+
+          {/* Mobile menu toggle */}
+          <button
+            type="button"
+            className="mobile-menu-btn"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-expanded={mobileMenuOpen}
+            aria-label="Toggle navigation menu"
+          >
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+          </button>
+        </div>
 
         {/* Navigation links & controls */}
         <nav
@@ -106,19 +122,6 @@ export const Navbar: React.FC<NavbarProps> = ({
           </ul>
 
           <div className="nav-actions">
-            {/* Ambient Music Control: Symbol-Only 🎵 */}
-            <button
-              type="button"
-              className={`nav-music-btn ${isAmbientPlaying ? 'music-playing' : ''}`}
-              onClick={toggleAmbientMusic}
-              aria-label={isAmbientPlaying ? 'Pause ambient music' : 'Resume ambient music'}
-              title={isAmbientPlaying ? 'Pause ambient music' : 'Resume ambient music'}
-            >
-              <span className="nav-music-icon" aria-hidden="true">
-                🎵
-              </span>
-            </button>
-
             {/* Authenticated User Status Badge OR Sign In Pill */}
             {isAuthenticated && user ? (
               <div className="nav-user-badge">

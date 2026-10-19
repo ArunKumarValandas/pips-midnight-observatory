@@ -691,6 +691,40 @@
   line-height: 1;
 }
 
+.nav-header-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (min-width: 1025px) {
+  .site-nav {
+    display: contents;
+  }
+
+  .nav-header-controls {
+    display: contents;
+  }
+
+  .brand-logo {
+    order: 1;
+  }
+
+  .nav-list {
+    order: 2;
+    margin-left: auto;
+  }
+
+  .nav-music-btn {
+    order: 3;
+    margin-left: 6px;
+  }
+
+  .nav-actions {
+    order: 4;
+  }
+}
+
 .mobile-menu-btn {
   display: none;
   flex-direction: column;
@@ -3850,8 +3884,31 @@
   }
 
   /* Move mobile navbar drawer to 1024px breakpoint to prevent overflow */
+  .nav-header-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+  }
+
+  .nav-music-btn {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    min-height: 42px;
+    font-size: 1.2rem;
+  }
+
   .mobile-menu-btn {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 42px;
+    min-height: 42px;
+    padding: 8px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
   }
 
   .site-nav {
@@ -6242,5 +6299,329 @@ img.lantern-img {
 
   .refresh-icon.spinning {
     animation: none !important;
+  }
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVENESS SUITE (GOODNIGHT PAGE & GLOBAL MUSIC CONTROL)
+   Viewports: 320px, 375px, 390px, 430px, 768px
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  /* Goodnight page outer container */
+  .closing-section {
+    padding: 20px 14px max(36px, env(safe-area-inset-bottom)) 14px;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  .goodnight-stage-layout {
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+
+  /* Goodnight sanctuary sky card */
+  .sanctuary-sky-backdrop {
+    padding: 24px 16px;
+    border-radius: 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Proportional video container with aspect-ratio 16 / 9 and no rigid min-height */
+  .sleeping-pip-interactive-stage {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .goodnight-video-wrapper {
+    min-height: auto;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .closing-pip-video,
+  .closing-pip-thumb {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  /* Secret Star Easter Egg button touch target */
+  .secret-star-btn {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+  }
+
+  /* Typography & Bedtime Wish Controls */
+  .signoff-title {
+    font-size: clamp(1.35rem, 5.5vw, 1.75rem);
+    line-height: 1.25;
+    margin-bottom: 10px;
+    word-break: break-word;
+  }
+
+  .signoff-quote {
+    font-size: 1.05rem;
+    line-height: 1.48;
+    margin-bottom: 10px;
+  }
+
+  .wish-btn {
+    width: 100%;
+    max-width: 340px;
+    white-space: normal;
+    padding: 12px 18px;
+    font-size: 0.92rem;
+    line-height: 1.35;
+    min-height: 44px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .wishes-counter-text {
+    font-size: 0.82rem;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    line-height: 1.35;
+  }
+
+  /* Guestbook wall responsive container & touch targets */
+  .goodnight-guestbook-wall {
+    padding: 16px 14px;
+    border-radius: 14px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .guestbook-actions-bar {
+    gap: 8px;
+  }
+
+  .write-wish-trigger-btn,
+  .guestbook-refresh-btn {
+    min-height: 40px;
+  }
+
+  .dream-note-card {
+    padding: 10px 12px 8px 12px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Observatory page navigation */
+  .page-nav-container {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .page-nav-btn {
+    min-height: 44px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 16px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Multi-page links */
+  .footer-links-list {
+    gap: 8px 10px;
+  }
+
+  .footer-link-btn {
+    padding: 8px 10px;
+    font-size: 0.84rem;
+    min-height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Colophon safe area */
+  .footer-colophon {
+    padding-top: 18px;
+    padding-bottom: max(24px, env(safe-area-inset-bottom));
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Navbar micro adjustments for narrow mobile */
+  .nav-container {
+    padding: 8px 10px 8px 10px;
+    gap: 8px;
+  }
+
+  .nav-header-controls {
+    gap: 6px;
+  }
+
+  .nav-music-btn {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    font-size: 1.15rem;
+  }
+
+  .mobile-menu-btn {
+    min-width: 40px;
+    min-height: 40px;
+    padding: 6px;
+  }
+
+  .brand-title {
+    font-size: 1.05rem;
+  }
+
+  .brand-badge {
+    font-size: 0.65rem;
+  }
+
+  /* Goodnight adjustments for <= 480px (375px, 390px, 430px) */
+  .closing-section {
+    padding: 16px 10px max(32px, env(safe-area-inset-bottom)) 10px;
+  }
+
+  .goodnight-stage-layout {
+    gap: 18px;
+    margin-bottom: 18px;
+  }
+
+  .sanctuary-sky-backdrop {
+    padding: 18px 12px;
+    border-radius: 14px;
+  }
+
+  .cloud-puffs {
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+  }
+
+  .pip-play-hint-badge,
+  .pip-replay-hint-badge {
+    font-size: 0.7rem;
+    padding: 3px 10px;
+    bottom: 6px;
+  }
+
+  .signoff-title {
+    font-size: clamp(1.2rem, 5vw, 1.45rem);
+    line-height: 1.25;
+    margin-bottom: 8px;
+  }
+
+  .signoff-quote {
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+
+  .signoff-author {
+    font-size: 0.82rem;
+    margin-bottom: 16px;
+  }
+
+  .wish-btn {
+    max-width: 300px;
+    padding: 11px 14px;
+    font-size: 0.85rem;
+    line-height: 1.35;
+    min-height: 44px;
+  }
+
+  .wishes-counter-text {
+    font-size: 0.78rem;
+  }
+
+  .goodnight-guestbook-wall {
+    padding: 14px 10px;
+    border-radius: 12px;
+  }
+
+  .guestbook-title {
+    font-size: 1.12rem;
+  }
+
+  .dream-note-card {
+    padding: 9px 10px 7px 10px;
+  }
+
+  .secret-star-modal-backdrop,
+  .guestbook-modal-backdrop {
+    padding: 12px;
+  }
+
+  .secret-star-dialog,
+  .guestbook-modal-dialog {
+    padding: 20px 14px;
+    border-radius: 14px;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .secret-dialog-heading,
+  .modal-dialog-title {
+    font-size: 1.35rem;
+  }
+
+  .secret-dialog-message {
+    font-size: 1.05rem;
+  }
+
+  .footer-links-list {
+    gap: 6px 8px;
+  }
+
+  .footer-link-btn {
+    padding: 7px 8px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  /* Ultra-narrow mobile: 320px */
+  .nav-container {
+    padding: 8px 8px 8px 8px;
+    gap: 6px;
+  }
+
+  .brand-badge {
+    display: none;
+  }
+
+  .brand-title {
+    font-size: 1rem;
+  }
+
+  .closing-section {
+    padding: 14px 8px max(28px, env(safe-area-inset-bottom)) 8px;
+  }
+
+  .sanctuary-sky-backdrop {
+    padding: 14px 8px;
+  }
+
+  .signoff-title {
+    font-size: 1.22rem;
+  }
+
+  .wish-btn {
+    max-width: 270px;
+    padding: 10px 12px;
+    font-size: 0.82rem;
+  }
+
+  .goodnight-guestbook-wall {
+    padding: 12px 8px;
   }
 }
