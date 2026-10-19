@@ -385,9 +385,9 @@ Explore the themes, discover the interactive elements, experience the soundscape
 
 ## 👨‍💻 About the Developer
 
-**Arun Kumar**
+**Arun Kumar, Laxman Vky, Gaurav Kumar**
 
-Creator and developer of Pip’s Midnight Observatory.
+Creators and developers of Pip’s Midnight Observatory.
 
 This project brings together frontend development, visual storytelling, interactive design, media integration, and deployment in a distinctive creative experience.
 
